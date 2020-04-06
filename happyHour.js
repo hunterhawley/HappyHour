@@ -99,7 +99,7 @@ function generateUsers(amount) {
         //Make new user icon
         var newUser = document.createElement("img");
         //Set its source and id
-        newUser.src = 'images/user' + users + 'Icon.png';
+        newUser.src = 'images/user' + users + 'icon.png';
         newUser.id = 'user' + users;
         newUser.class = 'user';
         newUser.style.width = "40px";
