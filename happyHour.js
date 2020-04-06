@@ -102,12 +102,18 @@ function generateUsers(amount) {
         newUser.src = 'images/user' + users + 'Icon.png';
         newUser.id = 'user' + users;
         newUser.class = 'user';
-        newUser.style.width ="40px";
+        newUser.style.width = "40px";
+        newUser.style.height = "47px";
         newUser.style.position = "absolute";
-        newUser.style.left = (Math.random() * 680) + 20;
-        newUser.style.top = (Math.random() * 230) + 20;
+        
         //Put the user in the room
         document.getElementById('room').appendChild(newUser);
+
+        //Move user in room
+        var userStyle = window.getComputedStyle(document.getElementById("user" + users), null);
+        var roomStyle = window.getComputedStyle(document.getElementById('room'), null);
+        newUser.style.left = Math.random() * (parseInt(roomStyle.getPropertyValue("width").slice(0, -2)) - parseInt(userStyle.getPropertyValue("width").slice(0, -2))) + "px";
+        newUser.style.top = Math.random() * (parseInt(roomStyle.getPropertyValue("height").slice(0, -2)) - parseInt(userStyle.getPropertyValue("height").slice(0, -2))) + "px";
 
         //Make new user audio
         var newUserAudio = document.createElement("audio");
