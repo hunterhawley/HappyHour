@@ -1,0 +1,19 @@
+#room {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 300px;
+    margin: 0;
+    border: 5px solid blue;
+}
+
+.user {
+    width: 40px;
+    position: absolute;
+}
+
+#nearbyUsersImages {
+    width: 20%;
+    margin: 0;
+    display: inline-block;
+}
